@@ -3,71 +3,73 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HomePage extends BasePage{
-    @FindBy(linkText = "Weborder")
-    private WebElement webOrderLink;
+public class HomePage extends BasePage {
 
-    @FindBy(linkText = "Webautomation")
-    private WebElement webAutomationLink;
+	@FindBy(linkText = "Weborder")
+	private WebElement webOrderLink;
 
-    @FindBy(linkText = "Target Market")
-    private WebElement targetMarketLink;
+	@FindBy(linkText = "Webautomation")
+	private WebElement webAutomationLink;
 
-    @FindBy(linkText = "Booking")
-    private WebElement bookingLink;
+	@FindBy(linkText = "Target Market")
+	private WebElement targetMarketLink;
 
-    @FindBy(linkText = "Handling Certifications")
-    private WebElement handlingCertificationsLink;
+	@FindBy(linkText = "Booking")
+	private WebElement bookingLink;
 
-    @FindBy(linkText = "File Uploading")
-    private WebElement fileUploadingLink;
+	@FindBy(linkText = "Handling Certifications")
+	private WebElement handlingCertificationsLink;
 
-    @FindBy(className = "theme-switcher")
-    private WebElement themeSwitcherToggleButton;
+	@FindBy(linkText = "File Uploading")
+	private WebElement fileUploadingLink;
 
-    @FindBy(css = "h1.display-1.text-fifth")
-    private WebElement exploreInarTestingWorldTitleText;
+	@FindBy(className = "theme-switcher")
+	private WebElement themeSwitcherToggleButton;
 
-    // Constructor
-    public HomePage() {
-        super();
-    }
+	@FindBy(css = "h1.display-1.text-fifth")
+	private WebElement exploreInarTestingWorldTitleText;
 
-    // Actions with Java methods
+	// Constructor
+	public HomePage() {
+		super();
+	}
 
-    public void clickOnWebOrderLink() {
-        webOrderLink.click();
-    }
+	// Actions with Java methods
 
-    public void clickOnWebAutomationLink() {
-        webAutomationLink.click();
-    }
+	public void clickOnWebOrderLink() {
+		webOrderLink.click();
+	}
 
-    public void clickOnTargetMarketLink() {
-        targetMarketLink.click();
-    }
+	public void clickOnWebAutomationLink() {
+		webAutomationLink.click();
+	}
 
-    public void clickOnBookingLink() {
-        bookingLink.click();
-    }
+	public void clickOnTargetMarketLink() {
+		targetMarketLink.click();
+	}
 
-    public void clickOnHandlingCertificationsLink() {
-        handlingCertificationsLink.click();
-    }
+	public void clickOnBookingLink() {
+		bookingLink.click();
+	}
 
-    public void clickOnFileUploadingLink() {
-        fileUploadingLink.click();
-    }
+	public void clickOnHandlingCertificationsLink() {
+		handlingCertificationsLink.click();
+	}
 
-    public void clickOnThemeSwitcherToggleButton() {
-        themeSwitcherToggleButton.click();
-    }
+	public void clickOnFileUploadingLink() {
+		fileUploadingLink.click();
+	}
 
-    public String getWelcomeText() {
-        return exploreInarTestingWorldTitleText.getText();
-    }
+	public void clickOnThemeSwitcherToggleButton() {
+		themeSwitcherToggleButton.click();
+	}
 
-    public void refreshPage() {
-        DRIVER.navigate().refresh();
-    }
+	public String getWelcomeText() {
+		return exploreInarTestingWorldTitleText.getText();
+	}
+
+	public void refreshPage() {
+		DRIVER.navigate().refresh();
+	}
+
 }
