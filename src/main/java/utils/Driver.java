@@ -10,66 +10,56 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class Driver {
 
-    private static final ThreadLocal<WebDriver> DRIVER_THREAD_LOCAL = new ThreadLocal<>();
+	private static final ThreadLocal<WebDriver> DRIVER_THREAD_LOCAL = new ThreadLocal<>();
 
-    public static String browser = System.getProperty("browser", "chrome").toLowerCase();
+	public static String browser = System.getProperty("browser", "chrome").toLowerCase();
 
-    private Driver() {
+	private Driver() {
 
-    }
+	}
 
-    public synchronized static WebDriver getDriver() {
-        if (DRIVER_THREAD_LOCAL.get() == null) {
-            WebDriver driver;
+	public synchronized static WebDriver getDriver() {
+		if (DRIVER_THREAD_LOCAL.get() == null) {
+			WebDriver driver;
 
-            switch (browser) {
-                case "firefox" -> {
-                    FirefoxOptions firefoxOptions = new FirefoxOptions();
-                    firefoxOptions.addArguments("--ignore-certificate-errors");
-                    firefoxOptions.addArguments("--allow-running-insecure-content");
-                    driver = new FirefoxDriver(firefoxOptions);
-                    driver.manage().window().maximize();
-                }
+			switch (browser) {
+				case "firefox" -> {
+					FirefoxOptions firefoxOptions = new FirefoxOptions();
+					firefoxOptions.addArguments("--ignore-certificate-errors");
+					firefoxOptions.addArguments("--allow-running-insecure-content");
+					driver = new FirefoxDriver(firefoxOptions);
+					driver.manage().window().maximize();
+				}
 
-                case "edge" -> {
-                    EdgeOptions edgeOptions = new EdgeOptions();
-                    edgeOptions.addArguments("--start-maximized");
-                    edgeOptions.addArguments("--ignore-certificate-errors");
-                    edgeOptions.addArguments("--allow-running-insecure-content");
-                    driver = new EdgeDriver(edgeOptions);
-                }
+				case "edge" -> {
+					EdgeOptions edgeOptions = new EdgeOptions();
+					edgeOptions.addArguments("--start-maximized");
+					edgeOptions.addArguments("--ignore-certificate-errors");
+					edgeOptions.addArguments("--allow-running-insecure-content");
+					driver = new EdgeDriver(edgeOptions);
+				}
 
-                default -> {
-                    ChromeOptions chromeOptions = new ChromeOptions();
-                    chromeOptions.addArguments("--start-maximized");
-                    chromeOptions.addArguments("--ignore-certificate-errors");
-                    chromeOptions.addArguments("--allow-running-insecure-content");
-                    driver = new ChromeDriver(chromeOptions);
-                }
-            }
+				default -> {
+					ChromeOptions chromeOptions = new ChromeOptions();
+					chromeOptions.addArguments("--start-maximized");
+					chromeOptions.addArguments("--ignore-certificate-errors");
+					chromeOptions.addArguments("--allow-running-insecure-content");
+					driver = new ChromeDriver(chromeOptions);
+				}
+			}
 
-            driver.get("https://InarAcademy:Fk160621.@test.inar-academy.com");
-            if (browser.equalsIgnoreCase("firefox")) {
-                driver.navigate().refresh();
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            }
+			DRIVER_THREAD_LOCAL.set(driver);
+		}
+		return DRIVER_THREAD_LOCAL.get();
+	}
 
-            DRIVER_THREAD_LOCAL.set(driver);
-        }
-        return DRIVER_THREAD_LOCAL.get();
-    }
+	public static void closeDriver() {
+		WebDriver currentDriver = DRIVER_THREAD_LOCAL.get();
 
-    public static void closeDriver () {
-        WebDriver currentDriver = DRIVER_THREAD_LOCAL.get();
-
-        if (currentDriver != null) {
-            currentDriver.quit();
-            DRIVER_THREAD_LOCAL.remove();
-        }
-    }
+		if (currentDriver != null) {
+			currentDriver.quit();
+			DRIVER_THREAD_LOCAL.remove();
+		}
+	}
 
 }
