@@ -7,36 +7,39 @@ import pages.BasePage;
 import java.util.List;
 
 public class MultipleRemote_Page extends BasePage {
-    @FindBy(id = "tags-multipleremotes")
-    WebElement inputBox;
 
-    @FindBy(css = "#ui-id-43 > li")
-    List<WebElement> suggestionList;
+	@FindBy(id = "tags-multipleremotes")
+	WebElement inputBox;
 
-    @FindBy(xpath = "//*[@id='tags-multipleremotes']/../span")
-    WebElement loadingText;
+	@FindBy(css = "#ui-id-43 > li")
+	List<WebElement> suggestionList;
 
-    public void typeInput(String text) {
-        inputBox.sendKeys(text);
-    }
+	@FindBy(xpath = "//*[@id='tags-multipleremotes']/../span")
+	WebElement loadingText;
 
-    public boolean checkSuggestionsStartsWith(String begins) {
-        for (WebElement suggestion : suggestionList) {
-            if (!suggestion.getText().toLowerCase().startsWith(begins.toLowerCase())) {
-                return false;
-            }
-        }
-        return true;
-    }
+	public void typeInput(String text) {
+		inputBox.sendKeys(text);
+	}
 
-    public boolean isSuggestionListVisible () {
-        return !suggestionList.isEmpty();
-    }
-    public void clearInputField() {
-        inputBox.clear();
-    }
+	public boolean checkSuggestionsStartsWith(String begins) {
+		for (WebElement suggestion : suggestionList) {
+			if (!suggestion.getText().toLowerCase().startsWith(begins.toLowerCase())) {
+				return false;
+			}
+		}
+		return true;
+	}
 
-    public boolean isLoadingTextVisible() {
-        return loadingText.isDisplayed();
-    }
+	public boolean isSuggestionListVisible() {
+		return !suggestionList.isEmpty();
+	}
+
+	public void clearInputField() {
+		inputBox.clear();
+	}
+
+	public boolean isLoadingTextVisible() {
+		return loadingText.isDisplayed();
+	}
+
 }

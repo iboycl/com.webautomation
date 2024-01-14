@@ -3,8 +3,6 @@ package pages.droppable;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
-import utils.BrowserUtils;
-import utils.JSUtils;
 
 public class Revert_Draggable_Page extends BasePage {
 
@@ -57,7 +55,7 @@ public class Revert_Draggable_Page extends BasePage {
 
 	public void releaseRevertDraggableSecond() {
 		actions.release().build().perform();
-		BrowserUtils.wait(2);
+		wait(2);
 	}
 
 	public int[] getRevertDraggableFirstLocation() {
@@ -75,7 +73,7 @@ public class Revert_Draggable_Page extends BasePage {
 	}
 
 	public String getDroppableRevertDraggableBGColor() {
-		return JSUtils.getBGColorOfElementWithJavaScript(droppableRevertDraggableBox);
+		return getBGColorOfElementWithJavaScript(droppableRevertDraggableBox);
 	}
 
 }

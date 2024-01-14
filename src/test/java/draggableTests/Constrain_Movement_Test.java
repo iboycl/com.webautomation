@@ -33,7 +33,7 @@ public class Constrain_Movement_Test extends Hooks {
 
 	@Test
 	void testDraggableConstrainFunc() {
-		pages.getHomePage().clickOnWebAutomationLink();
+		// pages.getHomePage().clickOnWebAutomationLink();
 		// 1. Click on the Draggable button
 		pages.getWebAutomationPage().clickOnDraggableLink();
 		// 2. Click on the Constrain Movement button

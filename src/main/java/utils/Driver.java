@@ -8,7 +8,6 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
-
 public class Driver {
 
 	private static final ThreadLocal<WebDriver> DRIVER_THREAD_LOCAL = new ThreadLocal<>();
@@ -18,13 +17,12 @@ public class Driver {
 	}
 
 	public synchronized static WebDriver getDriver() {
-		return getDriver(System.getProperty("browserType", "chrome"));
+		return DRIVER_THREAD_LOCAL.get();
 	}
 
-	public synchronized static WebDriver getDriver(String browserType) {
+	public synchronized static void setDriver(String browserType) {
 		if (DRIVER_THREAD_LOCAL.get() == null) {
 			WebDriver driver;
-
 			switch (browserType.toLowerCase()) {
 				case "firefox" -> {
 					FirefoxOptions firefoxOptions = new FirefoxOptions();
@@ -68,10 +66,8 @@ public class Driver {
 					throw new RuntimeException(e);
 				}
 			}
-
 			DRIVER_THREAD_LOCAL.set(driver);
 		}
-		return DRIVER_THREAD_LOCAL.get();
 	}
 
 	public static void closeDriver() {

@@ -2,7 +2,6 @@ package utils;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
 public class BrowserUtils {
@@ -33,24 +32,6 @@ public class BrowserUtils {
 
 	public static void scrollUpWithPageUp() {
 		actions.keyDown(Keys.PAGE_UP).release().build().perform();
-	}
-
-	public static void wait(double second) {
-		try {
-			Thread.sleep((long) second * 1000);
-		}
-		catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public static void wait(int second) {
-		try {
-			Thread.sleep((long) second * 1000);
-		}
-		catch (InterruptedException e) {
-			e.printStackTrace();
-		}
 	}
 
 	public static String getTitle() {

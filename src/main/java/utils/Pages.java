@@ -106,5 +106,8 @@ public class Pages {
 		return normalIframePage;
 	}
 
-	public MultipleRemote_Page getMultipleRemotePage() {return multipleRemotePage; }
+	public MultipleRemote_Page getMultipleRemotePage() {
+		return multipleRemotePage;
+	}
+
 }

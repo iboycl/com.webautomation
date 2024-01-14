@@ -6,10 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.BasePage;
-import utils.BrowserUtils;
 import utils.Driver;
-
-import java.util.List;
 
 public class Alert_Types_Page extends BasePage {
 
@@ -29,7 +26,6 @@ public class Alert_Types_Page extends BasePage {
 	WebElement showPromptButton;
 
 	public void switchToAlert() {
-		BrowserUtils.wait(2);
 		alert = driver.switchTo().alert();
 	}
 
@@ -50,7 +46,7 @@ public class Alert_Types_Page extends BasePage {
 	}
 
 	public String getAlertText() {
-		BrowserUtils.wait(2);
+		wait(2);
 		return alert.getText();
 	}
 
@@ -63,10 +59,12 @@ public class Alert_Types_Page extends BasePage {
 	}
 
 	public void typeInputOnAlert(String text) {
+		wait(2);
 		alert.sendKeys(text);
 	}
 
 	public Alert isAlertVisible() {
+		wait(2);
 		return ExpectedConditions.alertIsPresent().apply(driver);
 	}
 
