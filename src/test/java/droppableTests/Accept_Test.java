@@ -1,14 +1,13 @@
 package droppableTests;
 
 import BaseTest.Hooks;
-import org.junit.jupiter.api.Test;
-import utils.Pages;
+import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotEquals;
 
 // 1. Click on the Droppable button
 // 2. Click on the Accept button

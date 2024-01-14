@@ -6,17 +6,17 @@
 
     <groupId>org.inar</groupId>
     <artifactId>com.webautomation</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.3</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <selenium.version>4.16.1</selenium.version>
-        <junit.version>5.10.1</junit.version>
+        <testng.version>7.9.0</testng.version>
         <assertJ.version>3.24.2</assertJ.version>
         <!-- default browser type-->
-        <browser>chrome</browser>
+        <browserType>chrome</browserType>
     </properties>
     <dependencies>
         <dependency>
@@ -25,26 +25,11 @@
             <version>${selenium.version}</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- JUnit Jupiter Engine to run the tests -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- JUnit Jupiter Params for parameterized tests -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
-            <version>${junit.version}</version>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -73,11 +58,10 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.3</version>
                 <configuration>
-                    <!-- Specific configuration for JUnit 5. -->
-                    <useModulePath>false</useModulePath>
-                    <includes>
-                        <include>**/*.java</include>
-                    </includes>
+                    <!-- Specific configuration for testNG -->
+                    <suiteXmlFiles>
+                        <suiteXmlFile>regressionTests.xml</suiteXmlFile>
+                    </suiteXmlFiles>
                 </configuration>
             </plugin>
             <plugin>

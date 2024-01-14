@@ -2,8 +2,7 @@ package draggableTests;
 
 import BaseTest.Hooks;
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.Test;
-import utils.Pages;
+import org.testng.annotations.Test;
 
 /**
  * 1. Open the browser and navigate to the page 2. click on the draggable button 3. click

@@ -1,5 +1,6 @@
 package utils;
 
+import pages.Autocomplete.MultipleRemote_Page;
 import pages.HomePage;
 import pages.WebAutomationPage;
 import pages.alerts.Alert_Types_Page;
@@ -39,6 +40,8 @@ public class Pages {
 
 	private Normal_Iframe_Page normalIframePage;
 
+	private MultipleRemote_Page multipleRemotePage;
+
 	public Pages() {
 		homePage = new HomePage();
 		webAutomationPage = new WebAutomationPage();
@@ -52,6 +55,7 @@ public class Pages {
 		serializePage = new Serialize_Page();
 		alertTypesPage = new Alert_Types_Page();
 		normalIframePage = new Normal_Iframe_Page();
+		multipleRemotePage = new MultipleRemote_Page();
 	}
 
 	public HomePage getHomePage() {
@@ -102,4 +106,5 @@ public class Pages {
 		return normalIframePage;
 	}
 
+	public MultipleRemote_Page getMultipleRemotePage() {return multipleRemotePage; }
 }

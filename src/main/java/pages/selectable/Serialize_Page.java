@@ -5,8 +5,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
+import utils.BrowserUtils;
 import utils.Driver;
-import utils.JSUtils;
 
 import java.util.List;
 
@@ -27,9 +27,11 @@ public class Serialize_Page extends BasePage {
 	}
 
 	public void clickOnElementByPressingCtrl(int index) {
-		actions.keyDown(Keys.CONTROL).perform();
-		selectableElements.get(index - 1).click();
-		actions.keyUp(Keys.CONTROL).perform();
+		actions.moveToElement(selectableElements.get(index - 1))
+			.keyDown(Keys.CONTROL)
+			.click()
+			.keyUp(Keys.CONTROL)
+			.perform();
 	}
 
 	public void chooseElementsByDragging(int index1, int index2, int index3) {

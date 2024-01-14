@@ -1,9 +1,10 @@
 package selectableTests;
 
 import BaseTest.Hooks;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
+import utils.BrowserUtils;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.testng.Assert.assertEquals;
 
 // 1. Click on Selectable button
 // 2. Click on Serialize button

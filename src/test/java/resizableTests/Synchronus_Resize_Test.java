@@ -1,14 +1,11 @@
 package resizableTests;
 
 import BaseTest.Hooks;
-import org.junit.jupiter.api.Test;
-import utils.Pages;
-
+import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
+import static org.testng.Assert.assertTrue;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 // 1. Click on the Resizable button
 // 2. Click on the Synchronus Resize button
 // 3. Resize the first element by offset

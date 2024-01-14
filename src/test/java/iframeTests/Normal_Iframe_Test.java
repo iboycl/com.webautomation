@@ -1,10 +1,9 @@
 package iframeTests;
 
 import BaseTest.Hooks;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 import pages.iframe.Normal_Iframe_Page;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.testng.Assert.assertEquals;
 
 // 1. Click on Iframe button
 // 2. Click on Normal Iframe button
