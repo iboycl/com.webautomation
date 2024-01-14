@@ -33,7 +33,7 @@ public class Revert_Draggable_Test extends Hooks {
 
 	@Test
 	void testDroppableAcceptFunc() {
-		pages.getHomePage().clickOnWebAutomationLink();
+		// pages.getHomePage().clickOnWebAutomationLink();
 		// 1. Click on the Droppable button
 		pages.getWebAutomationPage().clickOnDroppableLink();
 

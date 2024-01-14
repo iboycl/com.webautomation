@@ -35,12 +35,12 @@ public class Alert_Types_Test extends Hooks {
 
 	@Test
 	void testAlert() {
-		pages.getHomePage().clickOnWebAutomationLink();
+		// pages.getHomePage().clickOnWebAutomationLink();
 		pages.getWebAutomationPage().clickOnAlertsLink();
 
 		Alert_Types_Page alertTypesPage = pages.getAlertTypesPage();
 
-		BrowserUtils.wait(2);
+		// BrowserUtils.wait(2);
 		// 1. Click on Show Alert button
 		alertTypesPage.clickOnShowAlert();
 

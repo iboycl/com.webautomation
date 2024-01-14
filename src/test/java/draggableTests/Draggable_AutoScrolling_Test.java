@@ -15,7 +15,7 @@ public class Draggable_AutoScrolling_Test extends Hooks {
 	@Test
 	void testAutoScrolling() {
 		// 1. Open the browser and navigate to the page
-		pages.getHomePage().clickOnWebAutomationLink();
+		// pages.getHomePage().clickOnWebAutomationLink();
 
 		// 2. click on the draggable button
 		pages.getWebAutomationPage().clickOnDraggableLink();

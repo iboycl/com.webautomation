@@ -25,7 +25,7 @@ public class Serialize_Test extends Hooks {
 	@Test
 	void testSerialize() {
 
-		pages.getHomePage().clickOnWebAutomationLink();
+		// pages.getHomePage().clickOnWebAutomationLink();
 		// 1. Click on the Selectable button
 		pages.getWebAutomationPage().clickOnSelectableLink();
 

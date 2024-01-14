@@ -1,16 +1,12 @@
 package pages.iframe;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
-import utils.Driver;
 
 public class Normal_Iframe_Page extends BasePage {
 
-	WebDriver driver = Driver.getDriver();
-
-	String mainWindowHandle = driver.getWindowHandle();
+	String mainWindowHandle = DRIVER.getWindowHandle();
 
 	@FindBy(id = "nestedIframe")
 	WebElement iframe;
@@ -25,11 +21,11 @@ public class Normal_Iframe_Page extends BasePage {
 	WebElement iframeTitle;
 
 	public void switchToIframe() {
-		driver.switchTo().frame(iframe);
+		DRIVER.switchTo().frame(iframe);
 	}
 
 	public void switchToWindow() {
-		driver.switchTo().window(mainWindowHandle);
+		DRIVER.switchTo().window(mainWindowHandle);
 	}
 
 	public String getIframeH1Text() {

@@ -26,7 +26,7 @@ public class TextArea_Test extends Hooks {
 
 	@Test
 	void testTextArea() {
-		pages.getHomePage().clickOnWebAutomationLink();
+		// pages.getHomePage().clickOnWebAutomationLink();
 		// 1. Click on the Resizable button
 		pages.getWebAutomationPage().clickOnResizableLink();
 

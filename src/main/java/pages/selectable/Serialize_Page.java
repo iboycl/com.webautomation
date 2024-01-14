@@ -1,13 +1,9 @@
 package pages.selectable;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
-import utils.BrowserUtils;
-import utils.Driver;
-
 import java.util.List;
 
 public class Serialize_Page extends BasePage {
@@ -44,10 +40,7 @@ public class Serialize_Page extends BasePage {
 	}
 
 	public String getSelectableElementBGColor(int index) {
-		JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-		return (String) js.executeScript(
-				"return window.getComputedStyle(arguments[0]).getPropertyValue('background-color');",
-				selectableElements.get(index - 1));
+		return getBGColorOfElementWithJavaScript(selectableElements.get(index - 1));
 	}
 
 	public String getSelectableElementText(int index) {

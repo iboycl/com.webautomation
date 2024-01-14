@@ -30,7 +30,7 @@ public class Handles_Test extends Hooks {
 	@Test
 	void testHandles() {
 
-		pages.getHomePage().clickOnWebAutomationLink();
+		// pages.getHomePage().clickOnWebAutomationLink();
 
 		// 1. Click on the Draggable button
 		pages.getWebAutomationPage().clickOnDraggableLink();

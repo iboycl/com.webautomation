@@ -15,7 +15,7 @@ public class Normal_Iframe_Test extends Hooks {
 
 	@Test
 	void testNormalIframe() {
-		pages.getHomePage().clickOnWebAutomationLink();
+		// pages.getHomePage().clickOnWebAutomationLink();
 
 		// 1. Click on Iframe button
 		pages.getWebAutomationPage().clickOnIframeLink();

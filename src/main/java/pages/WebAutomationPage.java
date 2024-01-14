@@ -65,7 +65,6 @@ public class WebAutomationPage extends BasePage {
 	@FindBy(linkText = "Multiple & Remote")
 	private WebElement multipleRemoteLink;
 
-
 	public void clickOnDraggableLink() {
 		draggableLink.click();
 	}
@@ -151,13 +150,12 @@ public class WebAutomationPage extends BasePage {
 	}
 
 	public void clickOnAutocompleteLink() {
+		wait(2);
 		autocompleteLink.click();
 	}
 
 	public void clickOnMultipleRemoteLink() {
 		multipleRemoteLink.click();
 	}
-
-
 
 }
