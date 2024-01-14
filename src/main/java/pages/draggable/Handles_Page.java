@@ -3,6 +3,7 @@ package pages.draggable;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
+import utils.BrowserUtils;
 
 public class Handles_Page extends BasePage {
 
@@ -23,9 +24,11 @@ public class Handles_Page extends BasePage {
 	}
 
 	public void dragFirstDraggableWithoutHandle(int xOffset, int yOffset) {
-		actions.moveToLocation(firstDraggable.getLocation().getX(), firstDraggable.getLocation().getY())
+		int locX = firstDraggable.getLocation().getX();
+		int locY = firstDraggable.getLocation().getY();
+		actions.moveToLocation(locX, locY)
 			.clickAndHold()
-			.moveToLocation(xOffset, yOffset)
+			.moveToLocation(locX + xOffset, locY + yOffset)
 			.release()
 			.build()
 			.perform();
@@ -36,8 +39,8 @@ public class Handles_Page extends BasePage {
 	}
 
 	public void dragSecondDraggableWithoutHandle(int xOffset, int yOffset) {
-		int locX = secondDraggable.getLocation().getX();
-		int locY = secondDraggable.getLocation().getY();
+		int locX = secondDraggable.getLocation().getX() + 5;
+		int locY = secondDraggable.getLocation().getY() + 5;
 		actions.moveToLocation(locX, locY)
 			.clickAndHold()
 			.moveToLocation(locX + xOffset, locY + yOffset)
@@ -46,20 +49,12 @@ public class Handles_Page extends BasePage {
 			.perform();
 	}
 
-	public int getLocationOfTheFirstDraggableX() {
-		return firstDraggable.getLocation().getX();
+	public int[] getLocationOfTheFirstDraggable() {
+		return new int[] { firstDraggable.getLocation().getX(), firstDraggable.getLocation().getY() };
 	}
 
-	public int getLocationOfTheFirstDraggableY() {
-		return firstDraggable.getLocation().getY();
-	}
-
-	public int getLocationOfTheSecondDraggableX() {
-		return secondDraggable.getLocation().getX();
-	}
-
-	public int getLocationOfTheSecondDraggableY() {
-		return secondDraggable.getLocation().getY();
+	public int[] getLocationOfTheSecondDraggable() {
+		return new int[] { secondDraggable.getLocation().getX(), secondDraggable.getLocation().getY() };
 	}
 
 }

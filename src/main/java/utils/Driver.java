@@ -8,21 +8,24 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
+
 public class Driver {
 
 	private static final ThreadLocal<WebDriver> DRIVER_THREAD_LOCAL = new ThreadLocal<>();
-
-	public static String browser = System.getProperty("browser", "chrome").toLowerCase();
 
 	private Driver() {
 
 	}
 
 	public synchronized static WebDriver getDriver() {
+		return getDriver(System.getProperty("browserType", "chrome"));
+	}
+
+	public synchronized static WebDriver getDriver(String browserType) {
 		if (DRIVER_THREAD_LOCAL.get() == null) {
 			WebDriver driver;
 
-			switch (browser) {
+			switch (browserType.toLowerCase()) {
 				case "firefox" -> {
 					FirefoxOptions firefoxOptions = new FirefoxOptions();
 					firefoxOptions.addArguments("--ignore-certificate-errors");
@@ -45,6 +48,24 @@ public class Driver {
 					chromeOptions.addArguments("--ignore-certificate-errors");
 					chromeOptions.addArguments("--allow-running-insecure-content");
 					driver = new ChromeDriver(chromeOptions);
+				}
+			}
+
+			driver.get("https://InarAcademy:Fk160621.@test.inar-academy.com");
+			try {
+				Thread.sleep(1000);
+			}
+			catch (InterruptedException e) {
+				throw new RuntimeException(e);
+			}
+
+			if (browserType.equalsIgnoreCase("firefox")) {
+				driver.navigate().refresh();
+				try {
+					Thread.sleep(1000);
+				}
+				catch (InterruptedException e) {
+					throw new RuntimeException(e);
 				}
 			}
 

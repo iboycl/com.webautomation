@@ -1,32 +1,24 @@
 package BaseTest;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import utils.Driver;
 import utils.Pages;
 
 public class Hooks {
 
-	private static String browser = Driver.browser;
-
 	protected static Pages pages;
 
-	@BeforeAll
-	public static void setUpTestEnvironment() {
+	@BeforeMethod
+	@Parameters("browserType")
+	public static void setUpTestEnvironment(@Optional("chrome") String browserType) {
+		Driver.getDriver(browserType);
 		pages = new Pages();
-		Driver.getDriver().get("https://InarAcademy:Fk160621.@test.inar-academy.com");
-		if (browser.equalsIgnoreCase("firefox")) {
-			Driver.getDriver().navigate().refresh();
-			try {
-				Thread.sleep(1000);
-			}
-			catch (InterruptedException e) {
-				throw new RuntimeException(e);
-			}
-		}
 	}
 
-	@AfterAll
+	@AfterMethod
 	public static void tearDown() {
 		Driver.closeDriver();
 	}

@@ -3,6 +3,7 @@ package pages.resizable;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
+import utils.BrowserUtils;
 
 public class Textarea_Page extends BasePage {
 
@@ -23,11 +24,27 @@ public class Textarea_Page extends BasePage {
 	}
 
 	public void resizeTextAreaWithRightHandle(int xOffset) {
-		actions.dragAndDropBy(textAreaRightHandle, xOffset, 0).perform();
+		int locX = textAreaRightHandle.getLocation().getX();
+		int locY = textAreaRightHandle.getLocation().getY();
+		actions.moveToLocation(locX + 1, locY + 1)
+			.clickAndHold()
+			.moveToLocation(locX + xOffset, locY)
+			.release()
+			.build()
+			.perform();
+		// actions.dragAndDropBy(textAreaRightHandle, xOffset, 0).perform();
 	}
 
 	public void resizeTextAreaWithBottomHandle(int yOffset) {
-		actions.dragAndDropBy(textAreaBottomHandle, 0, yOffset).perform();
+		int locX = textAreaBottomHandle.getLocation().getX();
+		int locY = textAreaBottomHandle.getLocation().getY();
+		actions.moveToLocation(locX + 1, locY + 1)
+			.clickAndHold()
+			.moveToLocation(locX, locY + yOffset)
+			.release()
+			.build()
+			.perform();
+		// actions.dragAndDropBy(textAreaBottomHandle, 0, yOffset).perform();
 	}
 
 	public int[] getTextAreaSize() {

@@ -1,14 +1,12 @@
 package alertTests;
 
 import BaseTest.Hooks;
-import org.junit.jupiter.api.Test;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.annotations.Test;
 import pages.alerts.Alert_Types_Page;
 import utils.BrowserUtils;
 
-import java.util.function.BooleanSupplier;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNull;
 
 // 1. Click on Show Alert button
 // 2. Verify alert is visible by getting its text "This is an alert!"

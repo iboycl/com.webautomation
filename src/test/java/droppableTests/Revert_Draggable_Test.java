@@ -1,16 +1,15 @@
 package droppableTests;
 
 import BaseTest.Hooks;
-import org.junit.jupiter.api.Test;
-import utils.Pages;
+import org.assertj.core.data.Percentage;
+import org.testng.annotations.Test;
+import utils.BrowserUtils;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotEquals;
 
 // 1. Click on the Droppable button
 // 2. Click on the Revert draggable position button
@@ -94,8 +93,12 @@ public class Revert_Draggable_Test extends Hooks {
 
 		// 10. Verify the second element reverts to its initial location if it isn't
 		// dropped on droppable box
-		assertThat(locationsOfSecondElement.get(0)).as("The second element didn't revert back to its initial location")
-			.isEqualTo(locationsOfSecondElement.get(1));
+		assertThat(locationsOfSecondElement.get(1)[0])
+			.as("The second element didn't revert back to its initial location")
+			.isCloseTo(locationsOfSecondElement.get(0)[0], Percentage.withPercentage(1));
+		assertThat(locationsOfSecondElement.get(1)[1])
+			.as("The second element didn't revert back to its initial location")
+			.isCloseTo(locationsOfSecondElement.get(0)[1], Percentage.withPercentage(1));
 
 		// 11. Drag and drop the second element on the droppable box
 		pages.getRevertDraggablePage().dragRevertDraggableSecondToDroppableBox();

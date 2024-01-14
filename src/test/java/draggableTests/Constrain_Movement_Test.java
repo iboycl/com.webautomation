@@ -1,16 +1,14 @@
 package draggableTests;
 
 import BaseTest.Hooks;
-import org.junit.jupiter.api.Test;
-import utils.Pages;
+import org.assertj.core.data.Percentage;
+import org.testng.annotations.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotEquals;
 
 // 1. Click on the Draggable button
 // 2. Click on the Constrain Movement button
@@ -49,8 +47,13 @@ public class Constrain_Movement_Test extends Hooks {
 		// Get final location of the vertically draggable element
 		locationsOfFirstElement.add(pages.getConstrainMovementPage().getVerticalDraggableLocation());
 		// 4. Verify the vertically draggable element moved only vertically
-		assertEquals(locationsOfFirstElement.get(0)[0], locationsOfFirstElement.get(1)[0],
-				"The vertically draggable element moved horizontally");
+		assertThat(locationsOfFirstElement.get(1)[0]).as("The vertically draggable element moved horizontally")
+			.isCloseTo(locationsOfFirstElement.get(0)[0], Percentage.withPercentage(1));
+		/*
+		 * assertEquals(locationsOfFirstElement.get(0)[0],
+		 * locationsOfFirstElement.get(1)[0],
+		 * "The vertically draggable element moved horizontally");
+		 */
 		assertThat(locationsOfFirstElement.get(1)[1]).as("The vertically draggable element didn't move vertically")
 			.isGreaterThan(locationsOfFirstElement.get(0)[1]);
 

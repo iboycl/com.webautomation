@@ -1,0 +1,47 @@
+<suite name="regression" parallel="classes" thread-count="1">
+    <test name="Webautomation ChromeTest">
+        <parameter name="browserType" value="chrome"/>
+        <classes>
+            <class name="alertTests.Alert_Types_Test"/>
+            <class name="draggableTests.Constrain_Movement_Test"/>
+            <class name="draggableTests.Draggable_AutoScrolling_Test"/>
+            <class name="draggableTests.Handles_Test"/>
+            <class name="droppableTests.Accept_Test"/>
+            <class name="droppableTests.Revert_Draggable_Test"/>
+            <class name="iframeTests.Normal_Iframe_Test"/>
+            <class name="resizableTests.Synchronus_Resize_Test"/>
+            <class name="resizableTests.TextArea_Test"/>
+            <class name="selectableTests.Serialize_Test"/>
+        </classes>
+    </test>
+    <test name="Webautomation EdgeTest">
+        <parameter name="browserType" value="edge"/>
+        <classes>
+            <class name="alertTests.Alert_Types_Test"/>
+            <class name="draggableTests.Constrain_Movement_Test"/>
+            <class name="draggableTests.Draggable_AutoScrolling_Test"/>
+            <class name="draggableTests.Handles_Test"/>
+            <class name="droppableTests.Accept_Test"/>
+            <class name="droppableTests.Revert_Draggable_Test"/>
+            <class name="iframeTests.Normal_Iframe_Test"/>
+            <class name="resizableTests.Synchronus_Resize_Test"/>
+            <class name="resizableTests.TextArea_Test"/>
+            <class name="selectableTests.Serialize_Test"/>
+        </classes>
+    </test>
+    <test name="Webautomation FirefoxTest">
+        <parameter name="browserType" value="firefox"/>
+        <classes>
+            <class name="alertTests.Alert_Types_Test"/>
+            <class name="draggableTests.Constrain_Movement_Test"/>
+            <class name="draggableTests.Draggable_AutoScrolling_Test"/>
+            <class name="draggableTests.Handles_Test"/>
+            <class name="droppableTests.Accept_Test"/>
+            <class name="droppableTests.Revert_Draggable_Test"/>
+            <class name="iframeTests.Normal_Iframe_Test"/>
+            <class name="resizableTests.Synchronus_Resize_Test"/>
+            <class name="resizableTests.TextArea_Test"/>
+            <class name="selectableTests.Serialize_Test"/>
+        </classes>
+    </test>
+</suite>
