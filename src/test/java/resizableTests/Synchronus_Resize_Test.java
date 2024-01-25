@@ -22,7 +22,7 @@ public class Synchronus_Resize_Test extends Hooks {
 	List<int[]> sizesOfSecondElement = new ArrayList<>();
 
 	@Test
-	void testDroppableAcceptFunc() {
+	void testSynchronusResizeFunc() {
 		// pages.getHomePage().clickOnWebAutomationLink();
 		// 1. Click on the Resizable button
 		pages.getWebAutomationPage().clickOnResizableLink();

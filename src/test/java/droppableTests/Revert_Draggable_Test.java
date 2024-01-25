@@ -32,7 +32,7 @@ public class Revert_Draggable_Test extends Hooks {
 	List<int[]> locationsOfSecondElement = new ArrayList<>();
 
 	@Test
-	void testDroppableAcceptFunc() {
+	void testRevertDraggableFunc() {
 		// pages.getHomePage().clickOnWebAutomationLink();
 		// 1. Click on the Droppable button
 		pages.getWebAutomationPage().clickOnDroppableLink();

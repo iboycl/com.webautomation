@@ -1,4 +1,4 @@
-package pages.Autocomplete;
+package pages.autocomplete;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -6,7 +6,7 @@ import pages.BasePage;
 
 import java.util.List;
 
-public class MultipleRemote_Page extends BasePage {
+public class Multiple_Remote_Page extends BasePage {
 
 	@FindBy(id = "tags-multipleremotes")
 	WebElement inputBox;
