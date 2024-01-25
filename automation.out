@@ -1,0 +1,5 @@
+2024-01-25 14:50:35 INFO  Hooks:20 - Starting Tests
+2024-01-25 14:50:35 INFO  Hooks:21 - Browser Type:chrome
+2024-01-25 14:50:37 INFO  Model_Form_Test:25 - Test Modal Form started
+2024-01-25 14:50:41 INFO  Model_Form_Test:65 - Test Modal Form finished
+2024-01-25 14:50:43 INFO  Hooks:37 - Finished Tests
