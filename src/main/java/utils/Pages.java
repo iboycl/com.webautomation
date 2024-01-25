@@ -1,15 +1,22 @@
 package utils;
 
-import pages.Autocomplete.MultipleRemote_Page;
 import pages.HomePage;
 import pages.WebAutomationPage;
 import pages.alerts.Alert_Types_Page;
+import pages.autocomplete.Accent_Folding_Page;
+import pages.autocomplete.Multiple_Remote_Page;
+import pages.controlGroup.Toolbar_Page;
+import pages.datePicker.Date_Range_Page;
+import pages.datePicker.Display_Multiple_Months_Page;
+import pages.dialog.Model_Form_Page;
 import pages.draggable.AutoScrolling_Page;
 import pages.draggable.Constrain_Movement_Page;
 import pages.draggable.Handles_Page;
 import pages.droppable.Accept_Page;
 import pages.droppable.Revert_Draggable_Page;
 import pages.iframe.Normal_Iframe_Page;
+import pages.menu.Icons_Page;
+import pages.progressBar.Download_Dialog_Page;
 import pages.resizable.Synchronus_Resize_Page;
 import pages.resizable.Textarea_Page;
 import pages.selectable.Serialize_Page;
@@ -40,7 +47,21 @@ public class Pages {
 
 	private Normal_Iframe_Page normalIframePage;
 
-	private MultipleRemote_Page multipleRemotePage;
+	private Multiple_Remote_Page multipleRemotePage;
+
+	private Accent_Folding_Page accentFoldingPage;
+
+	private Icons_Page iconsPage;
+
+	private Download_Dialog_Page downloadDialogPage;
+
+	private Display_Multiple_Months_Page displayMultipleMonthsPage;
+
+	private Date_Range_Page dateRangePage;
+
+	private Toolbar_Page toolbarPage;
+
+	private Model_Form_Page modelFormPage;
 
 	public Pages() {
 		homePage = new HomePage();
@@ -55,7 +76,14 @@ public class Pages {
 		serializePage = new Serialize_Page();
 		alertTypesPage = new Alert_Types_Page();
 		normalIframePage = new Normal_Iframe_Page();
-		multipleRemotePage = new MultipleRemote_Page();
+		multipleRemotePage = new Multiple_Remote_Page();
+		accentFoldingPage = new Accent_Folding_Page();
+		iconsPage = new Icons_Page();
+		downloadDialogPage = new Download_Dialog_Page();
+		displayMultipleMonthsPage = new Display_Multiple_Months_Page();
+		dateRangePage = new Date_Range_Page();
+		toolbarPage = new Toolbar_Page();
+		modelFormPage = new Model_Form_Page();
 	}
 
 	public HomePage getHomePage() {
@@ -106,8 +134,26 @@ public class Pages {
 		return normalIframePage;
 	}
 
-	public MultipleRemote_Page getMultipleRemotePage() {
+	public Multiple_Remote_Page getMultipleRemotePage() {
 		return multipleRemotePage;
 	}
+
+	public Accent_Folding_Page getAccentFoldingPage() { return accentFoldingPage; }
+
+	public Icons_Page getIconsPage() { return iconsPage; }
+
+	public Download_Dialog_Page getDownloadDialogPage() {return downloadDialogPage;}
+
+	public Display_Multiple_Months_Page getDisplayMultipleMonthsPage() {return displayMultipleMonthsPage;}
+
+	public Date_Range_Page getSelectDateRangePage() {
+		return dateRangePage;
+	}
+
+	public Toolbar_Page getToolbarPage() {
+		return toolbarPage;
+	}
+
+	public Model_Form_Page getModelFormPage() {return modelFormPage;}
 
 }

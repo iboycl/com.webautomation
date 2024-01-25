@@ -65,6 +65,43 @@ public class WebAutomationPage extends BasePage {
 	@FindBy(linkText = "Multiple & Remote")
 	private WebElement multipleRemoteLink;
 
+	@FindBy(linkText = "Accent Folding")
+	private WebElement accentFoldingLink;
+
+	@FindBy(linkText = "Menu")
+	private WebElement menuLink;
+
+	@FindBy(linkText = "Icons")
+	private WebElement iconsLink;
+
+	@FindBy(linkText = "Progress Bar")
+	private WebElement progressBarLink;
+
+	@FindBy(linkText = "Download Dialog")
+	private WebElement downloadDialogLink;
+
+	@FindBy(linkText = "Datepicker")
+	private WebElement datePickerLink;
+
+	@FindBy(linkText = "Display Multiple Months")
+	private WebElement displayMultipleMonthsLink;
+
+	@FindBy(linkText = "Select Date Range")
+	private WebElement selectDateRangeLink;
+
+	@FindBy(linkText = "Control Group")
+	private WebElement controlGroupLink;
+
+	@FindBy(linkText = "Toolbar")
+	private WebElement toolbarLink;
+
+	@FindBy(linkText = "Dialog")
+	private WebElement dialogLink;
+
+	@FindBy(linkText = "Modal Form")
+	private WebElement modalFormLink;
+
+
 	public void clickOnDraggableLink() {
 		draggableLink.click();
 	}
@@ -157,5 +194,29 @@ public class WebAutomationPage extends BasePage {
 	public void clickOnMultipleRemoteLink() {
 		multipleRemoteLink.click();
 	}
+
+	public void clickOnAccentFoldingLink() { accentFoldingLink.click(); }
+
+	public void clickOnMenuLink() {menuLink.click();}
+
+	public void clickOnIconsLink() {iconsLink.click();}
+
+	public void clickOnProgressBarLink() {progressBarLink.click();}
+
+	public void clickOnDownloadDialogLink() {downloadDialogLink.click();}
+
+	public void clickOnDatePickerLink() {datePickerLink.click();}
+
+	public void clickOnDisplayMultipleMonthsLink() {displayMultipleMonthsLink.click();}
+
+	public void clickOnSelectDateRangeLink() {selectDateRangeLink.click();}
+
+	public void clickOnControlGroupLink() {controlGroupLink.click();}
+
+	public void clickOnToolBarLink() {toolbarLink.click();}
+
+	public void clickOnDialogLink() {dialogLink.click();}
+
+	public void clickOnModalFormLink() {modalFormLink.click();}
 
 }

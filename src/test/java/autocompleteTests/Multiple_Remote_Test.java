@@ -2,7 +2,7 @@ package autocompleteTests;
 
 import BaseTest.Hooks;
 import org.testng.annotations.Test;
-import pages.Autocomplete.MultipleRemote_Page;
+import pages.autocomplete.Multiple_Remote_Page;
 
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
@@ -31,7 +31,7 @@ public class Multiple_Remote_Test extends Hooks {
 
 		// 4. click on the multiple and remote button
 		pages.getWebAutomationPage().clickOnMultipleRemoteLink();
-		MultipleRemote_Page multipleRemotePage = pages.getMultipleRemotePage();
+		Multiple_Remote_Page multipleRemotePage = pages.getMultipleRemotePage();
 
 		// 5. Enter "s" in the text field
 		multipleRemotePage.typeInput("s");
